@@ -1,0 +1,35 @@
+.website-objective-section {
+  margin-top:4rem;
+  padding: 3em 2.5em;
+  line-height:1.7em;
+}
+
+section {
+  padding: 3em 2.5em 3em 2.5em;
+  line-height:1.7em;
+}
+
+.headline {
+  margin-bottom: 1.8rem;
+  color:steelblue;
+  font-weight:900;
+  text-align:center;
+}
+
+.objective, .definition, .resources {
+  font-size:1.3rem;
+  font-weight:500;
+  margin-bottom:1rem;
+}
+
+.resource-link {
+  text-decoration: none;
+  font-size:1.1rem;
+  color:steelblue;
+  font-weight:400;
+  transition: .15s linear;
+
+  &:hover {
+    color:goldenrod;
+  }
+}

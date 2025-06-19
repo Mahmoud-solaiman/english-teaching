@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.header {
+  height: 4.5rem;
+  background: steelblue;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.nav-links {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.15s linear;
+}
+.nav-links a:hover {
+  color: darkgray;
+}
+
+.website-objective-section {
+  margin-top: 4rem;
+  padding: 3em 2.5em;
+  line-height: 1.7em;
+}
+
+section {
+  padding: 3em 2.5em 3em 2.5em;
+  line-height: 1.7em;
+}
+
+.headline {
+  margin-bottom: 1.8rem;
+  color: steelblue;
+  font-weight: 900;
+  text-align: center;
+}
+
+.objective, .definition, .resources {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.resource-link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: steelblue;
+  font-weight: 400;
+  transition: 0.15s linear;
+}
+.resource-link:hover {
+  color: goldenrod;
+}
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 13px;
+    text-align: center;
+  }
+  .nav-links {
+    gap: 4%;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=main.css.map */

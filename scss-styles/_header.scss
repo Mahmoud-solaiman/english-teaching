@@ -1,0 +1,30 @@
+.header {
+  height: 4.5rem;
+  background: steelblue;
+  position:fixed;
+  top:0;
+  right: 0;
+  left: 0;
+}
+
+.nav-links {
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:5%;
+
+  a {
+    color: #fff;
+    text-decoration:none;
+    font-size:1.2rem;
+    font-weight:500;
+    transition: .15s linear;
+  }
+
+  a:hover {
+    color:darkgray;
+
+  }
+
+}
