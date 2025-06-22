@@ -13,3 +13,62 @@
   }
   
 }
+
+@media (max-width: 31.25rem) {
+  .nav-links {
+    position: relative;
+    flex-direction: column;
+    bottom:1px;
+    background-color: steelblue;
+    height: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow:hidden;
+    transition: .3s linear;
+    box-shadow: 5px 10px 15px #777;
+
+    a {
+      font-size: 1.4rem;
+      width:100%;
+      padding: .5em 0;
+    }
+  }
+
+  .nav-links a:first-of-type {
+    border-top: 10px solid #fff;
+  }
+
+  .nav-links a:not(:last-child) {
+    border-bottom:1px solid #fff;
+  }
+
+  .mobile-header {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    height:100%;
+    padding: 0 1.3em;
+  }
+
+  .logo-content {
+    font-size: 1.4rem;
+    font-weight:700;
+    color:#fff;
+    letter-spacing: 2px;
+  }
+
+  .hamburger-menu {
+    height:25px;
+    width:35px;
+    // background-color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      height:3px;
+      background-color: #fff;
+      border-radius:10px;
+    }
+  }
+}
