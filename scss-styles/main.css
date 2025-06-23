@@ -107,7 +107,7 @@ section {
     padding: 0.5em 0;
   }
   .nav-links a:first-of-type {
-    border-top: 10px solid #fff;
+    border-top: 7px solid #fff;
   }
   .nav-links a:not(:last-child) {
     border-bottom: 1px solid #fff;
@@ -136,5 +136,6 @@ section {
     height: 3px;
     background-color: #fff;
     border-radius: 10px;
+    transition: 0.2s linear;
   }
 }/*# sourceMappingURL=main.css.map */

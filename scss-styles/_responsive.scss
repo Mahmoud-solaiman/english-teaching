@@ -35,7 +35,7 @@
   }
 
   .nav-links a:first-of-type {
-    border-top: 10px solid #fff;
+    border-top: 7px solid #fff;
   }
 
   .nav-links a:not(:last-child) {
@@ -60,7 +60,6 @@
   .hamburger-menu {
     height:25px;
     width:35px;
-    // background-color:white;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,6 +68,7 @@
       height:3px;
       background-color: #fff;
       border-radius:10px;
+      transition: .2s linear;
     }
   }
 }
