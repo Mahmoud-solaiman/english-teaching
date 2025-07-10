@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.2em 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: 3px solid rgb(211, 211, 211);
+  border-radius: 10px;
+  margin: 1rem;
+}
+.intro-header .instructions {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.instructions-btn {
+  cursor: pointer;
+}
+.instructions-btn .fa-book-open {
+  transition: 0.2s linear;
+}
+.instructions-btn:hover .fa-book-open {
+  color: #d3d3d3;
+}
+
+.intro-video {
+  text-align: center;
+  margin-top: 10%;
+}
+.intro-video iframe {
+  width: 50%;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.instructions-tab {
+  translate: 0 -100%;
+  transition: 0.2s linear;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  background-color: rgba(1, 36, 54, 0.8);
+  display: flex;
+  padding: 2em;
+}
+.instructions-tab .exit {
+  align-self: start;
+  cursor: pointer;
+}
+.instructions-tab .exit .fa-xmark {
+  font-size: 1.8rem;
+  transition: 0.2s linear;
+}
+.instructions-tab .exit:hover .fa-xmark {
+  color: #fff;
+}
+.instructions-tab .instruction-tips {
+  flex-grow: 0.999;
+  align-self: center;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.show-instructions {
+  translate: 0;
+  right: 0;
+  left: 0;
+}
+
+@media (max-width: 32rem) {
+  .intro-video iframe {
+    width: 90%;
+    border-radius: 10px;
+  }
+}/*# sourceMappingURL=main-lessons.css.map */

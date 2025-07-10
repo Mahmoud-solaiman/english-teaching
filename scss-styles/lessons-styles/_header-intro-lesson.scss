@@ -1,0 +1,17 @@
+.intro-header {
+  display:flex;
+  justify-content: space-around;
+  padding: 1.2em 0;
+  font-size:1.3rem;
+  font-weight:700;
+  border:3px solid rgb(211, 211, 211);
+  border-radius:10px;
+  margin: 1rem;
+
+  & .instructions {
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    text-align:center;
+  }
+}

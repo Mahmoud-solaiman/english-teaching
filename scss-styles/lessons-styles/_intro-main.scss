@@ -1,0 +1,75 @@
+.instructions-btn {
+  cursor:pointer;
+
+  .fa-book-open {
+    transition: .2s linear;
+  }
+
+  &:hover .fa-book-open {
+    color: #d3d3d3;
+  }
+}
+
+.intro-video {
+  text-align:center;
+  margin-top:10%;
+
+
+  & iframe {
+    width: 50%;
+    height:350px;
+    border-radius: 10px;
+  }
+}
+
+.instructions-tab {
+  translate: 0 -100%;
+  transition:.2s linear;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  bottom:0;
+  right:50%;
+  left:50%;
+  background-color: rgba(1, 36, 54, 0.8);
+  display:flex;
+  padding:2em;
+
+  & .exit {
+    align-self: start;
+    cursor:pointer;
+
+    & .fa-xmark {
+      font-size:1.8rem;
+      transition:.2s linear;
+    }
+
+    &:hover .fa-xmark {
+      color:#fff;
+    }
+  }
+
+  & .instruction-tips {
+    flex-grow: .999;
+    align-self: center;
+    text-align: center;
+    font-size:1.8rem;
+    font-weight:600;
+    color:#fff;
+  }
+
+}
+
+.show-instructions {
+  translate: 0;
+  right:0;
+  left:0;
+}
+@media (max-width:32rem) {
+  .intro-video {
+    & iframe {
+      width:90%;
+      border-radius: 10px;
+    }
+  }
+}
