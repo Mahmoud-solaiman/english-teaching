@@ -8,25 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <!-- The header of the intro lesson -->
     <header class="intro-header">
       <span>Welcome to your intro lesson</span>
       <span class="instructions-btn">
         <i class="fa-solid fa-book-open"></i>
       </span>
     </header>
-
+    <!-- The main section for the content of the first lesson -->
     <main class="intro-video">
       <iframe src="https://www.youtube.com/embed/ccEpTTZW34g?si=iq44JxDLniD9IjHf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </main>
-
+    <!-- The html for the instructions tab -->
     <div class="instructions-tab">
       <div class="instruction-tips">
-        No Special Instructions For This Lessons
+        No Special Instructions For This Lesson
       </div>
       <div class="exit">
         <i class="fa-solid fa-xmark"></i>
       </div>
     </div>
+    <!-- Button to take the user to the next lesson -->
+    <a href="./lesson1.html" class="next-lesson-link">
+      <button class="next-lesson-btn">
+        Next Lesson <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </a>
+
     <script src="../scripts/intro-lesson.js"></script>
   </body>
 </html>

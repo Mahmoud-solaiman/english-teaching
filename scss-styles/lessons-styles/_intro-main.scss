@@ -17,7 +17,7 @@
 
   & iframe {
     width: 50%;
-    height:350px;
+    height:250px;
     border-radius: 10px;
   }
 }
@@ -53,11 +53,42 @@
     flex-grow: .999;
     align-self: center;
     text-align: center;
-    font-size:1.8rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:1.5rem;
     font-weight:600;
     color:#fff;
   }
 
+}
+
+.next-lesson-link {
+  display: flex;
+  justify-content: center;
+}
+
+.next-lesson-btn {
+  position:fixed;
+  bottom:20px;
+  padding:.5em 1.4em;
+  font-size:1rem;
+  font-weight:600;
+  border-radius:30px;
+  display:flex;
+  align-items: center;
+  gap:5px;
+  cursor:pointer;
+  border:none;
+  background:steelblue;
+  color:#fff;
+  transition: .2s linear;
+  box-shadow: 0px 10px 5px -5px #7c7c7c;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 25px 5px -15px #7c7c7c;
+  }
 }
 
 .show-instructions {
