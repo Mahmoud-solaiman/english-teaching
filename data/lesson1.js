@@ -1,52 +1,112 @@
-const cardsFront = [
+const cards = [
   {
-    image: '../images/whatsyourname.png',
-    audio: '../audios/whatsyourname.mp3',
-    sentence: "What's your name?"
+    front: {
+      image: '../images/whatsyourname.png',
+      audio: '../audios/front-audios/whatsyourname.mp3',
+      sentence: "What's your name?"
+    },
+    back: {
+      audio:'../audios/back-audios/iamjannat.mp3',
+      answer:'I am Jannat'
+    }
   }, 
   {
-    image: '../images/howoldareyou.jpg',
-    audio: '../audios/howoldareyou.mp3',
-    sentence: "How old are you?"
+    front: {
+      image: '../images/howoldareyou.png',
+      audio: '../audios/front-audios/howoldareyou.mp3',
+      sentence: "How old are you?"
+    },
+    back: {
+      audio:'../audios/back-audios/iam12yearsold.mp3',
+      answer:"I'm 12 years old"
+    }
   },
   {
-    image: '../images/areyouastudent.png',
-    audio: '../audios/areyouastudent.mp3',
-    sentence: "Are you a student?"
+    front: {
+      image: '../images/areyouastudent.png',
+      audio: '../audios/front-audios/areyouastudent.mp3',
+      sentence: "Are you a student?"
+    },
+    back: {
+      audio:'../audios/back-audios/yesiam.mp3',
+      answer:"Yes, I am"
+    }
   },
   {
-    image: '../images/doyouhavesiblings.png',
-    audio: '../audios/doyouhavesiblings.mp3',
-    sentence: "Do you have siblings?"
+    front: {
+      image: '../images/doyouhavesiblings.png',
+      audio: '../audios/front-audios/doyouhavesiblings.mp3',
+      sentence: "Do you have siblings?"
+    },
+    back: {
+      audio:'../audios/back-audios/ihave2brosand2sisters.mp3',
+      answer:"Yes, I have 2 bros and 2 sisters"
+    }
   },
   {
-    image: '../images/howareyou.png',
-    audio: '../audios/howareyou.mp3',
-    sentence: "How are you?"
+    front: {
+      image: '../images/howareyou.png',
+      audio: '../audios/front-audios/howareyou.mp3',
+      sentence: "How are you?"
+    },
+    back: {
+      audio:'../audios/back-audios/imgood.mp3',
+      answer:"I'm good"
+    }
   },
   {
-    image: '../images/howmanylanguagescanyouspeak.jpg',
-    audio: '../audios/howmanylanguagescanyouspeak.mp3',
-    sentence: "How many languages can you speak?"
+    front: {
+      image: '../images/howmanylanguagescanyouspeak.png',
+      audio: '../audios/front-audios/howmanylanguagescanyouspeak.mp3',
+      sentence: "How many languages can you speak?"
+    },
+    back: {
+      audio:'../audios/back-audios/icanspeak1language.mp3',
+      answer:"I can speak one language"
+    }
   },
   {
-    image: '../images/howmuchisthis.png',
-    audio: '../audios/howmuchisthis.mp3',
-    sentence: "How much is this?"
+    front: {
+      image: '../images/howmuchisthis.png',
+      audio: '../audios/front-audios/howmuchisthis.mp3',
+      sentence: "How much is this?"
+    },
+    back: {
+      audio:'../audios/back-audios/its20pounds.mp3',
+      answer:"It's 20 pounds"
+    }
   },
   {
-    image: '../images/whatsyourfavoritecolor.png',
-    audio: '../audios/whatsyourfavoritecolor.mp3',
-    sentence: "What's your favorite color?"
+    front: {
+      image: '../images/whatsyourfavoritecolor.png',
+      audio: '../audios/front-audios/whatsyourfavoritecolor.mp3',
+      sentence: "What's your favorite color?"
+    },
+    back: {
+      audio:'../audios/back-audios/myfavoritecolorispink.mp3',
+      answer:"My favorite color is pink"
+    }
   },
   {
-    image: '../images/whattimeisit.png',
-    audio: '../audios/whattimeisit.mp3',
-    sentence: "What time is it?"
+    front: {
+      image: '../images/whattimeisit.png',
+      audio: '../audios/front-audios/whattimeisit.mp3',
+      sentence: "What time is it?"
+    },
+    back: {
+      audio:'../audios/back-audios/its630pm.mp3',
+      answer:"It's 6:30PM"
+    }
   },
   {
-    image: '../images/whereareyoufrom.png',
-    audio: '../audios/whereareyoufrom.mp3',
-    sentence: "Where are you from?"
+    front: {
+      image: '../images/whereareyoufrom.png',
+      audio: '../audios/front-audios/whereareyoufrom.mp3',
+      sentence: "Where are you from?"
+    },
+    back: {
+      audio:'../audios/back-audios/imfromegypt.mp3',
+      answer:"I'm from Egypt"
+    }
   }
 ];

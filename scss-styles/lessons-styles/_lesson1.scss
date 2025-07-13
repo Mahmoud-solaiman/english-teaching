@@ -10,8 +10,8 @@
 }
 
 .container {
-  display:grid;
-  grid-template-columns: repeat(3, 33.33%);
+  display:flex;
+  justify-content: center;
   align-items: center;
   gap:2em;
   padding:3em;
@@ -27,23 +27,27 @@
 
 .flip-card {
   background-color:transparent;
-  width:300px; //320px
-  height: 500px; //520px
+  width:320px; //320px
+  height: 520px; //520px
   perspective: 1000px;
-  // overflow:hidden;
-  // display:flex;
-  // justify-content: center;
-  // align-items:center;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns: repeat(2, 97%);
+  grid-template-rows: repeat(1, 94%);
+  justify-content: start;
+  align-items:center;
+  gap:1em;
 }
 
 .flip-card-inner {
   position:relative;
-  width:100%; //94%
-  height:100%; //94%
-  transition: transform 0.4s;
+  // width:94%; //94%
+  height:94%; //94%
+  transition: transform 0.3s linear;
   transform-style: preserve-3d;
-  box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 10px 0 rgba(0,0,0,0.3);
   border-radius: 10px;
+  margin-left:10px;
 }
 
 .flip-card-front, .flip-card-back {
@@ -109,10 +113,19 @@
   transform: rotateY(180deg);
 }
 
+.animate-in {
+  transform: translateX(-106%);
+}
+
+.animate-out {
+  transform: translateX(106%);
+}
+
 @media (max-width: 32rem) {
   .container {
     grid-template-columns: 100%;
-    padding:3em 2em;
+    padding:3em 1em;
+    gap:1em;
   }
 
   audio {
