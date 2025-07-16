@@ -1,4 +1,5 @@
 const flipCard = document.querySelector('.flip-card');
+const learnedCards = ["What's your name?"];
 
 function renderFirstCard() {
   flipCard.innerHTML = `
@@ -15,6 +16,9 @@ function renderFirstCard() {
       </div>
       <div class="flip-card-back">
         <p class="answer">${cards[0].back.answer}</p>
+        <audio controls>
+          <source src="${cards[0].back.audio}">
+        </audio>
         <button class="flip-back-btn flip-btn">Flip</button>
       </div>
     </div>
@@ -57,6 +61,9 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
     </div>
     <div class="flip-card-back">
       <p class="answer">${cards[cardNumber].back.answer}</p>
+      <audio controls>
+        <source src="${cards[cardNumber].back.audio}">
+      </audio>
       <button class="flip-back-btn flip-btn">Flip</button>
     </div>
   `;
@@ -74,8 +81,17 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
       flipCardsInner[element2].remove();
     }, 100);
   }, 5);
+  
+  const progressBar = document.querySelector('.progress-bar-inner');
+  const progressPercentage = document.querySelector('.progress-percentage');
 
-  console.log(cardNumber);
+  if(learnedCards.indexOf(cards[cardNumber].front.sentence) === -1) {
+    let cardsNumber = learnedCards.length + 1;
+    learnedCards.push(cards[cardNumber].front.sentence);
+    progressBar.style.width = `${(cardsNumber) * 10}%`;
+    progressPercentage.innerText = `${(cardsNumber) * 10}%`;
+    console.log(learnedCards, cardsNumber);
+  }
 }
 
 const rightBtn = document.querySelector('.right-btn');
@@ -87,7 +103,7 @@ rightBtn.addEventListener('pointerup', () => {
   if(cardNumber > 9) {
     cardNumber = 0;
   }
-  renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0);
+  renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0);  
 });
 
 leftBtn.addEventListener('pointerup', () => {

@@ -56,20 +56,18 @@ body {
   bottom: 0;
   right: 50%;
   left: 50%;
-  background-color: rgba(1, 36, 54, 0.8);
+  background-color: rgba(5, 5, 5, 0.8);
   display: flex;
   padding: 2em;
 }
 .instructions-tab .exit {
   align-self: start;
   cursor: pointer;
+  color: #fff;
 }
 .instructions-tab .exit .fa-xmark {
   font-size: 1.8rem;
   transition: 0.2s linear;
-}
-.instructions-tab .exit:hover .fa-xmark {
-  color: #fff;
 }
 .instructions-tab .instruction-tips {
   flex-grow: 0.999;
@@ -83,12 +81,15 @@ body {
   color: #fff;
 }
 
-.next-lesson-link {
+.next-lesson-link,
+.previous-lesson-link {
   display: flex;
   justify-content: center;
+  text-decoration-line: none;
 }
 
-.next-lesson-btn {
+.next-lesson-btn,
+.previous-lesson-btn {
   position: fixed;
   bottom: 20px;
   padding: 0.5em 1.4em;
@@ -105,7 +106,8 @@ body {
   transition: 0.2s linear;
   box-shadow: 0px 10px 5px -5px #7c7c7c;
 }
-.next-lesson-btn:hover {
+.next-lesson-btn:hover,
+.previous-lesson-btn:hover {
   transform: translateY(-5px);
   box-shadow: 2px 25px 5px -15px #7c7c7c;
 }
@@ -129,6 +131,30 @@ body {
 }
 .instructions li:not(li:last-child) {
   padding-bottom: 10px;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 25px;
+  background-color: rgb(220, 220, 220);
+  margin: 20px auto;
+  border-radius: 30px;
+}
+.progress-bar .progress-bar-inner {
+  width: 10%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: rgb(4, 177, 4);
+  transition: all 0.2s linear;
+  position: relative;
+}
+.progress-bar .progress-bar-inner .progress-percentage {
+  position: absolute;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  right: 5px;
+  bottom: 1px;
 }
 
 .container {
@@ -215,7 +241,7 @@ body {
 
 .flip-card-back {
   display: grid;
-  grid-template-rows: repeat(2, 50%);
+  grid-template-rows: repeat(3, 33.33%);
 }
 .flip-card-back .answer {
   text-align: center;
@@ -225,6 +251,17 @@ body {
 }
 .flip-card-back .flip-back-btn {
   align-self: end;
+}
+.flip-card-back audio {
+  align-self: center;
+}
+
+.nav-btns-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.nav-btns-container a .next-lesson-btn, .nav-btns-container a .previous-lesson-btn {
+  position: relative;
 }
 
 .flipped-card {

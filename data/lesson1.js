@@ -39,8 +39,8 @@ const cards = [
       sentence: "Do you have siblings?"
     },
     back: {
-      audio:'../audios/back-audios/ihave2brosand2sisters.mp3',
-      answer:"Yes, I have 2 bros and 2 sisters"
+      audio:'../audios/back-audios/yesihave2brothersand2sisters.mp3',
+      answer:"Yes, I have 2 brothers and 2 sisters"
     }
   },
   {
@@ -50,7 +50,7 @@ const cards = [
       sentence: "How are you?"
     },
     back: {
-      audio:'../audios/back-audios/imgood.mp3',
+      audio:'../audios/back-audios/iamgood.mp3',
       answer:"I'm good"
     }
   },
@@ -105,7 +105,7 @@ const cards = [
       sentence: "Where are you from?"
     },
     back: {
-      audio:'../audios/back-audios/imfromegypt.mp3',
+      audio:'../audios/back-audios/iamfromegypt.mp3',
       answer:"I'm from Egypt"
     }
   }
