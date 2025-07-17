@@ -8,6 +8,13 @@
   }
 }
 
+.homework {
+  & li a {
+    color:darkred;
+    font-size:1.2rem;
+  }
+}
+
 .progress-bar {
   width:80%;
   height:25px;
@@ -99,6 +106,7 @@
 
   & img {
     width:100%;
+    height:240px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -165,8 +173,18 @@
 @media (max-width: 32rem) {
   .container {
     grid-template-columns: 100%;
-    padding:3em 1em;
+    padding: .5em;
     gap:1em;
+  }
+
+  .progress-bar {
+    height:20px;
+    width:90%;
+    margin:10px auto;
+  
+    & .progress-bar-inner .progress-percentage {
+      font-size:.9rem;
+    }
   }
 
   audio {

@@ -1,5 +1,5 @@
 const flipCard = document.querySelector('.flip-card');
-const learnedCards = ["What's your name?"];
+const learnedCards = [];
 
 function renderFirstCard() {
   flipCard.innerHTML = `
@@ -23,6 +23,7 @@ function renderFirstCard() {
       </div>
     </div>
   `;
+  learnedCards.push(cards[0].front.sentence);
 }
 
 renderFirstCard();
@@ -90,7 +91,6 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
     learnedCards.push(cards[cardNumber].front.sentence);
     progressBar.style.width = `${(cardsNumber) * 10}%`;
     progressPercentage.innerText = `${(cardsNumber) * 10}%`;
-    console.log(learnedCards, cardsNumber);
   }
 }
 
