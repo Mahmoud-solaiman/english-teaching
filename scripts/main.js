@@ -5,7 +5,7 @@ const hamburgerMenuLines = document.querySelectorAll('.hamburger-menu div');
 
 hamburgerMenu.addEventListener('pointerup', e => {
   if (getComputedStyle(navList).getPropertyValue('height') === '0px') {
-    navList.style.height = '290px';
+    navList.style.height = '370px';
 
     hamburgerMenuLines[0].style = 'rotate: 60deg; translate: 0 10px;';
     hamburgerMenuLines[1].style = 'display: none;';

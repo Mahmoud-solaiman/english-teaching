@@ -1,111 +1,111 @@
 const cards = [
   {
     front: {
-      image: '../images/whatsyourname.png',
-      audio: '../audios/front-audios/whatsyourname.mp3',
+      image: '../images/lesson1/whatsyourname.png',
+      audio: '../audios/front-audios/lesson1/whatsyourname.mp3',
       sentence: "What's your name?"
     },
     back: {
-      audio:'../audios/back-audios/iamjannat.mp3',
+      audio:'../audios/back-audios/lesson1/iamjannat.mp3',
       answer:'I am Jannat'
     }
   }, 
   {
     front: {
-      image: '../images/howoldareyou.png',
-      audio: '../audios/front-audios/howoldareyou.mp3',
+      image: '../images/lesson1/howoldareyou.png',
+      audio: '../audios/front-audios/lesson1/howoldareyou.mp3',
       sentence: "How old are you?"
     },
     back: {
-      audio:'../audios/back-audios/iam12yearsold.mp3',
+      audio:'../audios/back-audios/lesson1/iam12yearsold.mp3',
       answer:"I'm 12 years old"
     }
   },
   {
     front: {
-      image: '../images/areyouastudent.png',
-      audio: '../audios/front-audios/areyouastudent.mp3',
+      image: '../images/lesson1/areyouastudent.png',
+      audio: '../audios/front-audios/lesson1/areyouastudent.mp3',
       sentence: "Are you a student?"
     },
     back: {
-      audio:'../audios/back-audios/yesiam.mp3',
+      audio:'../audios/back-audios/lesson1/yesiam.mp3',
       answer:"Yes, I am"
     }
   },
   {
     front: {
-      image: '../images/doyouhavesiblings.png',
-      audio: '../audios/front-audios/doyouhavesiblings.mp3',
+      image: '../images/lesson1/doyouhavesiblings.png',
+      audio: '../audios/front-audios/lesson1/doyouhavesiblings.mp3',
       sentence: "Do you have siblings?"
     },
     back: {
-      audio:'../audios/back-audios/yesihave2brothersand2sisters.mp3',
+      audio:'../audios/back-audios/lesson1/yesihave2brothersand2sisters.mp3',
       answer:"Yes, I have 2 brothers and 2 sisters"
     }
   },
   {
     front: {
-      image: '../images/howareyou.png',
-      audio: '../audios/front-audios/howareyou.mp3',
+      image: '../images/lesson1/howareyou.png',
+      audio: '../audios/front-audios/lesson1/howareyou.mp3',
       sentence: "How are you?"
     },
     back: {
-      audio:'../audios/back-audios/iamgood.mp3',
+      audio:'../audios/back-audios/lesson1/iamgood.mp3',
       answer:"I'm good"
     }
   },
   {
     front: {
-      image: '../images/howmanylanguagescanyouspeak.png',
-      audio: '../audios/front-audios/howmanylanguagescanyouspeak.mp3',
+      image: '../images/lesson1/howmanylanguagescanyouspeak.png',
+      audio: '../audios/front-audios/lesson1/howmanylanguagescanyouspeak.mp3',
       sentence: "How many languages can you speak?"
     },
     back: {
-      audio:'../audios/back-audios/icanspeak1language.mp3',
+      audio:'../audios/back-audios/lesson1/icanspeak1language.mp3',
       answer:"I can speak one language"
     }
   },
   {
     front: {
-      image: '../images/howmuchisthis.png',
-      audio: '../audios/front-audios/howmuchisthis.mp3',
+      image: '../images/lesson1/howmuchisthis.png',
+      audio: '../audios/front-audios/lesson1/howmuchisthis.mp3',
       sentence: "How much is this?"
     },
     back: {
-      audio:'../audios/back-audios/its20pounds.mp3',
+      audio:'../audios/back-audios/lesson1/its20pounds.mp3',
       answer:"It's 20 pounds"
     }
   },
   {
     front: {
-      image: '../images/whatsyourfavoritecolor.png',
-      audio: '../audios/front-audios/whatsyourfavoritecolor.mp3',
+      image: '../images/lesson1/whatsyourfavoritecolor.png',
+      audio: '../audios/front-audios/lesson1/whatsyourfavoritecolor.mp3',
       sentence: "What's your favorite color?"
     },
     back: {
-      audio:'../audios/back-audios/myfavoritecolorispink.mp3',
+      audio:'../audios/back-audios/lesson1/myfavoritecolorispink.mp3',
       answer:"My favorite color is pink"
     }
   },
   {
     front: {
-      image: '../images/whattimeisit.png',
-      audio: '../audios/front-audios/whattimeisit.mp3',
+      image: '../images/lesson1/whattimeisit.png',
+      audio: '../audios/front-audios/lesson1/whattimeisit.mp3',
       sentence: "What time is it?"
     },
     back: {
-      audio:'../audios/back-audios/its630pm.mp3',
+      audio:'../audios/back-audios/lesson1/its630pm.mp3',
       answer:"It's 6:30PM"
     }
   },
   {
     front: {
-      image: '../images/whereareyoufrom.png',
-      audio: '../audios/front-audios/whereareyoufrom.mp3',
+      image: '../images/lesson1/whereareyoufrom.png',
+      audio: '../audios/front-audios/lesson1/whereareyoufrom.mp3',
       sentence: "Where are you from?"
     },
     back: {
-      audio:'../audios/back-audios/iamfromegypt.mp3',
+      audio:'../audios/back-audios/lesson1/iamfromegypt.mp3',
       answer:"I'm from Egypt"
     }
   }
