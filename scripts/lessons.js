@@ -1,5 +1,20 @@
+import {showInstructions} from './instructions.js';
+
+showInstructions();
+
 const flipCard = document.querySelector('.flip-card');
-const learnedCards = [];
+const learnedCards = [];//To track how many cards have been learned for the progress bar
+const lessonNumber = document.title.at(-1);//To get the lesson number from the title
+let cards;//The variable that'll store all the cards
+
+//fetch the data from the json file and then render the first card
+fetch(`../data/lesson${lessonNumber}.json`)
+  .then(res => res.json())
+  .then(data => {
+    cards = data;
+    renderFirstCard(); 
+    flipCardFunc();
+  });
 
 function renderFirstCard() {
   flipCard.innerHTML = `
@@ -26,9 +41,7 @@ function renderFirstCard() {
   learnedCards.push(cards[0].front.sentence);
 }
 
-renderFirstCard();
-flipCardFunc();
-
+//Function to handle the card's flipping functionality
 function flipCardFunc() {
   const flipBtns = document.querySelectorAll('.js-flip-btn');
   const flipBackBtns = document.querySelectorAll('.flip-back-btn');
@@ -46,9 +59,12 @@ function flipCardFunc() {
   });
 }
 
+//Function to render new cards dynamically when clicking or pressing the left and right arrows
 function renderNewCard(addCard, cardNumber, animate, element1, element2) {
+  //The container for each card
   const flipCardInner = document.createElement('div');
   flipCardInner.classList.add('flip-card-inner');
+  //The HTML for each card
   flipCardInner.innerHTML = `
     <div class="flip-card-front">
       <div class="img-container">
@@ -68,9 +84,11 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
       <button class="flip-back-btn flip-btn">Flip</button>
     </div>
   `;
-  addCard(flipCardInner)
+  //appending or prepending a card depending on which button has been triggered
+  addCard(flipCardInner);
+  //execute the flipCardFunc to handle the newly added buttons
   flipCardFunc();
-  
+  //To handle the sliding effect of the cards when appending or prepending
   const flipCardsInner = document.querySelectorAll('.flip-card-inner');
   setTimeout(() => {
     flipCardsInner.forEach(flipCardInner => {
@@ -83,6 +101,7 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
     }, 100);
   }, 5);
   
+  //Tracking how many cards have been learned and updating the progress bar accordingly
   const progressBar = document.querySelector('.progress-bar-inner');
   const progressPercentage = document.querySelector('.progress-percentage');
 
@@ -98,6 +117,7 @@ const rightBtn = document.querySelector('.right-btn');
 const leftBtn = document.querySelector('.left-btn');
 let cardNumber = 0;
 
+//rightBtn eventListener
 rightBtn.addEventListener('pointerup', () => {
   cardNumber++;
   if(cardNumber > 9) {
@@ -106,6 +126,7 @@ rightBtn.addEventListener('pointerup', () => {
   renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0);  
 });
 
+//leftBtn eventListener
 leftBtn.addEventListener('pointerup', () => {
   cardNumber--;
   if(cardNumber < 0) {
