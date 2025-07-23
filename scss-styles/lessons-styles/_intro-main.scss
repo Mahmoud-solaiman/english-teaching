@@ -59,24 +59,21 @@
 
 }
 
-.next-lesson-link,
-.previous-lesson-link {
-  display: flex;
-  justify-content: center;
+.next-lesson-link-intro {
+  position:absolute;
+  right:0;
+  left:0;
+  text-align:center;
+  bottom:20px;
   text-decoration-line:none;
 }
 
 .next-lesson-btn, 
 .previous-lesson-btn {
-  position:fixed;
-  bottom:20px;
   padding:.5em 1.4em;
   font-size:1rem;
   font-weight:600;
   border-radius:30px;
-  display:flex;
-  align-items: center;
-  gap:5px;
   cursor:pointer;
   border:none;
   background:steelblue;

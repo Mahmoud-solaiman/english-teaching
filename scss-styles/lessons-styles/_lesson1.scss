@@ -147,13 +147,20 @@
   }
 }
 
+.youglish-link-container {
+  position:absolute;
+  right:0;
+  left:0;
+  text-align:center;
+}
+
 .nav-btns-container {
   display:grid;
   grid-template-columns: repeat(2, 50%);
-
-  & a .next-lesson-btn, 
-  & a .previous-lesson-btn {
+  padding:1em;
+  & .next-lesson-link {
     position:relative;
+    justify-self:end;
   }
 }
 
