@@ -1,5 +1,6 @@
 import {showInstructions} from './instructions.js';
-
+import { cardHTML } from './cardHTML.js';
+import { flipCardKeyboard, playAudioKeyboard } from './keyboard-navigations.js';
 showInstructions();
 
 const flipCard = document.querySelector('.flip-card');
@@ -19,23 +20,13 @@ fetch(`../data/lesson${lessonNumber}.json`)
 function renderFirstCard() {
   flipCard.innerHTML = `
     <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <div class="img-container">
-          <img src="${cards[0].front.image}" alt="${cards[0].front.sentence}">
-        </div>
-        <audio controls>
-          <source src="${cards[0].front.audio}">
-        </audio>
-        <p class="card-text">${cards[0].front.sentence}</p>
-        <button title="click the button to flip card" class="flip-btn js-flip-btn">Flip</button>
-      </div>
-      <div class="flip-card-back">
-        <p class="answer">${cards[0].back.answer}</p>
-        <audio controls>
-          <source src="${cards[0].back.audio}">
-        </audio>
-        <button class="flip-back-btn flip-btn">Flip</button>
-      </div>
+      ${cardHTML(
+        cards[0].front.image,
+        cards[0].front.sentence,
+        cards[0].front.audio,
+        cards[0].back.answer,
+        cards[0].back.audio
+      )}
     </div>
   `;
   learnedCards.push(cards[0].front.sentence);
@@ -66,23 +57,13 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
   flipCardInner.classList.add('flip-card-inner');
   //The HTML for each card
   flipCardInner.innerHTML = `
-    <div class="flip-card-front">
-      <div class="img-container">
-        <img src="${cards[cardNumber].front.image}" alt="${cards[cardNumber].front.sentence}">
-      </div>
-      <audio controls>
-        <source src="${cards[cardNumber].front.audio}">
-      </audio>
-      <p class="card-text">${cards[cardNumber].front.sentence}</p>
-      <button title="click the button to flip card" class="flip-btn js-flip-btn">Flip</button>
-    </div>
-    <div class="flip-card-back">
-      <p class="answer">${cards[cardNumber].back.answer}</p>
-      <audio controls>
-        <source src="${cards[cardNumber].back.audio}">
-      </audio>
-      <button class="flip-back-btn flip-btn">Flip</button>
-    </div>
+    ${cardHTML(
+        cards[cardNumber].front.image,
+        cards[cardNumber].front.sentence,
+        cards[cardNumber].front.audio,
+        cards[cardNumber].back.answer,
+        cards[cardNumber].back.audio
+      )}
   `;
   //appending or prepending a card depending on which button has been triggered
   addCard(flipCardInner);
@@ -134,3 +115,8 @@ leftBtn.addEventListener('pointerup', () => {
   }
   renderNewCard(flipCard.prepend.bind(flipCard), cardNumber, 'animate-out', 0, 1);
 });
+
+//Handle keyboard navigations and interactions
+
+flipCardKeyboard();
+playAudioKeyboard();
