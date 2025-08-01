@@ -1,6 +1,6 @@
 import {showInstructions} from './instructions.js';
 import { cardHTML } from './cardHTML.js';
-import { flipCardKeyboard, playAudioKeyboard } from './keyboard-navigations.js';
+import { flipCardKeyboard, playAudioKeyboard, navigateLessonKeyboard } from './keyboard-navigations.js';
 showInstructions();
 
 const flipCard = document.querySelector('.flip-card');
@@ -51,7 +51,7 @@ function flipCardFunc() {
 }
 
 //Function to render new cards dynamically when clicking or pressing the left and right arrows
-function renderNewCard(addCard, cardNumber, animate, element1, element2) {
+export function renderNewCard(addCard, cardNumber, animate, element1, element2) {
   //The container for each card
   const flipCardInner = document.createElement('div');
   flipCardInner.classList.add('flip-card-inner');
@@ -83,12 +83,17 @@ function renderNewCard(addCard, cardNumber, animate, element1, element2) {
   }, 5);
   
   //Tracking how many cards have been learned and updating the progress bar accordingly
+  trackProgress(cards[cardNumber].front.sentence);
+}
+
+function trackProgress(sentence) {
+  //Tracking how many cards have been learned and updating the progress bar accordingly
   const progressBar = document.querySelector('.progress-bar-inner');
   const progressPercentage = document.querySelector('.progress-percentage');
 
-  if(learnedCards.indexOf(cards[cardNumber].front.sentence) === -1) {
+  if(learnedCards.indexOf(sentence) === -1) {
     let cardsNumber = learnedCards.length + 1;
-    learnedCards.push(cards[cardNumber].front.sentence);
+    learnedCards.push(sentence);
     progressBar.style.width = `${(cardsNumber) * 10}%`;
     progressPercentage.innerText = `${(cardsNumber) * 10}%`;
   }
@@ -117,6 +122,26 @@ leftBtn.addEventListener('pointerup', () => {
 });
 
 //Handle keyboard navigations and interactions
+function changeCardKeyboard() {
+  window.addEventListener('keyup', e => {
+    if(e.key === 'ArrowRight') {
+      cardNumber++;
+      if(cardNumber > 9) {
+        cardNumber = 0;
+      }
+      renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0);  
+    }
+    if(e.key ==='ArrowLeft') {
+      cardNumber--;
+      if(cardNumber < 0) {
+        cardNumber = 9;
+      }
+      renderNewCard(flipCard.prepend.bind(flipCard), cardNumber, 'animate-out', 0, 1);
+    }
+  });
+}
 
 flipCardKeyboard();
 playAudioKeyboard();
+changeCardKeyboard();
+navigateLessonKeyboard();

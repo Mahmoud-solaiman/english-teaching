@@ -24,3 +24,14 @@ export function playAudioKeyboard() {
     }
   });
 }
+
+export function navigateLessonKeyboard() {
+  window.addEventListener('keyup', e => {
+    if(e.key === 'n') {
+      document.querySelector('.next-lesson-btn').click();
+    }
+    if(e.key === 'p') {
+      document.querySelector('.previous-lesson-btn').click();
+    }
+  });
+}

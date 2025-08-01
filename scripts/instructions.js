@@ -1,3 +1,5 @@
+import { navigateLessonKeyboard } from './keyboard-navigations.js';
+
 export function showInstructions() {
   const instructionsBtn = document.querySelector('.instructions-btn');
   const exitBtn = document.querySelector('.exit');
@@ -13,3 +15,5 @@ export function showInstructions() {
 }
 
 showInstructions();
+
+navigateLessonKeyboard();
