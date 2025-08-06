@@ -10,117 +10,6 @@ body {
   font-family: "Roboto";
 }
 
-.intro-header {
-  display: flex;
-  justify-content: space-around;
-  padding: 1.2em 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  border: 3px solid rgb(211, 211, 211);
-  border-radius: 10px;
-  margin: 1rem;
-}
-.intro-header .instructions {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.instructions-btn {
-  cursor: pointer;
-}
-.instructions-btn .fa-book-open {
-  transition: 0.2s linear;
-}
-.instructions-btn:hover .fa-book-open {
-  color: #d3d3d3;
-}
-
-.intro-video {
-  text-align: center;
-  margin-top: 10%;
-}
-.intro-video iframe {
-  width: 50%;
-  height: 250px;
-  border-radius: 10px;
-}
-
-.instructions-tab {
-  translate: 0 -100%;
-  transition: 0.2s linear;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  background-color: rgba(5, 5, 5, 0.8);
-  display: flex;
-  padding: 2em;
-}
-.instructions-tab .exit {
-  align-self: start;
-  cursor: pointer;
-  color: #fff;
-}
-.instructions-tab .exit .fa-xmark {
-  font-size: 1.8rem;
-  transition: 0.2s linear;
-}
-.instructions-tab .instruction-tips {
-  flex-grow: 0.999;
-  align-self: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.next-lesson-link-intro {
-  position: absolute;
-  right: 0;
-  left: 0;
-  text-align: center;
-  bottom: 20px;
-  text-decoration-line: none;
-}
-
-.next-lesson-btn,
-.previous-lesson-btn {
-  padding: 0.5em 1.4em;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  border: none;
-  background: steelblue;
-  color: #fff;
-  transition: 0.2s linear;
-  box-shadow: 0px 10px 5px -5px #7c7c7c;
-}
-.next-lesson-btn:hover,
-.previous-lesson-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 2px 25px 5px -15px #7c7c7c;
-}
-
-.show-instructions {
-  translate: 0;
-  right: 0;
-  left: 0;
-}
-
-@media (max-width: 32rem) {
-  .intro-video iframe {
-    width: 90%;
-    border-radius: 10px;
-  }
-}
 .instructions {
   font-size: 1.3rem;
   padding: 1em 0;
@@ -331,4 +220,45 @@ body {
   .review-examples-container .add-to-review {
     font-size: 0.8rem;
   }
-}/*# sourceMappingURL=main-lessons.css.map */
+}
+.review-grand-container {
+  height: 100vh;
+}
+
+.intervals-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+}
+.intervals-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.intervals-container div button {
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0.3em 1.4em;
+  cursor: pointer;
+}
+
+.empty-review {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+@media (max-width: 32rem) {
+  .intervals-container {
+    gap: 0.5em;
+  }
+  .intervals-container div button {
+    font-size: 0.9rem;
+    padding: 0.3em 1em;
+  }
+}/*# sourceMappingURL=review.css.map */
