@@ -65,9 +65,6 @@ export function renderNewCard(addCard, cardNumber, animate, element1, element2, 
       flipCardsInner[element2].remove();
     }, 100);
   }, 5);
-  
-  //Tracking how many cards have been learned and updating the progress bar accordingly
-  trackProgress(cards[cardNumber].front.sentence);
 }
 
 export function trackProgress(sentence) {

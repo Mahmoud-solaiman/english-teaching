@@ -1,6 +1,6 @@
 import {showInstructions} from './instructions.js';
 import { flipCardKeyboard, playAudioKeyboard, navigateLessonKeyboard } from './keyboard-navigations.js';
-import { renderFirstCard, flipCardFunc, renderNewCard} from './cards.js';
+import { renderFirstCard, flipCardFunc, renderNewCard, trackProgress} from './cards.js';
 
 showInstructions();
 
@@ -29,6 +29,7 @@ rightBtn.addEventListener('pointerup', () => {
     cardNumber = 0;
   }
   renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0, cards);  
+  trackProgress(cards[cardNumber].front.sentence);
 });
 
 //leftBtn eventListener
@@ -38,20 +39,27 @@ leftBtn.addEventListener('pointerup', () => {
     cardNumber = 9;
   }
   renderNewCard(flipCard.prepend.bind(flipCard), cardNumber, 'animate-out', 0, 1, cards);
+  trackProgress(cards[cardNumber].front.sentence);
 });
 
 //Function to add card to the review page
 const addToReviewBtn = document.querySelector('.add-to-review');
 addToReviewBtn.addEventListener('pointerup', () => {
-  const isCard = checkCards();
-  if(isCard === undefined) {
+  const isCard = cardsInReview.some(card => {
+    return card.front.sentence === cards[cardNumber].front.sentence
+  }); // Check if the card is already in review or not and then return true or false
+  if(!isCard) {
     const date = new Date();
-    cardsInReview.push(cards[cardNumber]);
-    cardsInReview[cardNumber].addTime = date.getTime();
-    cardsInReview[cardNumber].interval = 1;
+    const reviewCard = {
+        ...cards[cardNumber],
+        addTime: date.getTime(),
+        interval: 0,
+        timesOfReview: 0
+    };
+    cardsInReview.push(reviewCard);
     localStorage.setItem('cardsInReview', JSON.stringify(cardsInReview));
-
     handleAddMessage('Card was added successfully!');
+
   } else if(isCard) {
     handleAddMessage('Card was already added.');
   }
@@ -66,14 +74,6 @@ function handleAddMessage(message) {
   }, 1300);
 }
 
-function checkCards() {
-  for(let i = 0; i < cardsInReview.length; i++){
-    if(cardsInReview[i].front.sentence === cards[cardNumber].front.sentence) {
-      return true;
-    }
-  }
-}
-
 //Handle keyboard navigations and interactions
 function changeCardKeyboard() {
   window.addEventListener('keyup', e => {
@@ -83,6 +83,7 @@ function changeCardKeyboard() {
         cardNumber = 0;
       }
       renderNewCard(flipCard.append.bind(flipCard), cardNumber, 'animate-in', 1, 0, cards);  
+      trackProgress(cards[cardNumber].front.sentence);
     }
     if(e.key ==='ArrowLeft') {
       cardNumber--;
@@ -90,6 +91,7 @@ function changeCardKeyboard() {
         cardNumber = 9;
       }
       renderNewCard(flipCard.prepend.bind(flipCard), cardNumber, 'animate-out', 0, 1, cards);
+      trackProgress(cards[cardNumber].front.sentence);
     }
   });
 }
