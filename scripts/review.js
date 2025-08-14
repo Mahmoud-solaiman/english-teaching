@@ -85,7 +85,10 @@ function handleDifficult() {
   const difficultInterval = document.querySelector('.difficult-interval-time');
   difficultBtn.addEventListener('pointerup', () => {
     difficultIntervalsChecks(difficultInterval, dueCards, cardNumber, cardsInReview);
-    intervalsFunc();
+    updatePage();
+    if(dueCards.length > 0) {
+      intervalsFunc();
+    }
   });
 }
 
@@ -95,7 +98,10 @@ function handleGood() {
   const goodInterval = document.querySelector('.good-interval-time');
   goodBtn.addEventListener('pointerup', () => {
     goodIntervalsChecks(goodInterval, dueCards, cardNumber, cardsInReview);
-    intervalsFunc();
+    updatePage();
+    if(dueCards.length > 0) {
+      intervalsFunc();
+    }
   });
 }
 
@@ -105,7 +111,10 @@ function handleEasy() {
   const easyInterval = document.querySelector('.easy-interval-time');
   easyBtn.addEventListener('pointerup', () => {
     easyIntervalsChecks(easyInterval, dueCards, cardNumber, cardsInReview);
-    intervalsFunc();
+    updatePage();
+    if(dueCards.length > 0) {
+      intervalsFunc();
+    }
   });
 }
 
@@ -113,6 +122,14 @@ function handleEasy() {
 function intervalsFunc() {
   renderNextCard();
   handleIntervals(dueCards, cardNumber);
+}
+
+//update page
+function updatePage() {
+  if(dueCards.length === 0) {
+    flipCard.innerHTML = "Good job! You're done with your reviews for now.";
+    document.querySelector('.intervals-container').style.display = 'none'; 
+  }
 }
 
 //keyBoard events 

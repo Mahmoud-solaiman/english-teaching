@@ -185,6 +185,7 @@ body {
 }
 
 .flip-card {
+  text-align: center;
   background-color: transparent;
   width: 320px;
   height: 520px;

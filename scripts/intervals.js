@@ -1,12 +1,12 @@
 const intervalsObject = {
-  difficultIntervalsValues: ['5m', '15m', '2d', '5d', '8d', '12d', '18d', '23d', '1M', '1.5M', '2M', '3M'],
-  difficultIntervalsMinutes: [5, 15, 2880, 7200, 11520, 17280, 25920, 33120, 43200, 64800, 86400, 129600],
+  difficultIntervalsValues: ['5m', '15m', '2d', '5d', '8d', '12d', '18d', '23d', '1M', '1.5M', '2M', '3M', '8M'],
+  difficultIntervalsMinutes: [5, 15, 2880, 7200, 11520, 17280, 25920, 33120, 43200, 64800, 86400, 129600, 345600],
 
-  goodIntervalsValues: ['10m', '1d', '3d', '7d', '12d', '15d', '23d', '1M', '1.5M', '2M', '3M', '4.5M'],
-  goodIntervalsMinutes: [10, 1440, 4320, 10080, 17280, 21600, 33120, 43200, 64800, 86400, 129600, 194400],
+  goodIntervalsValues: ['10m', '1d', '3d', '7d', '12d', '15d', '23d', '1M', '1.5M', '2M', '3M', '4.5M', '10M'],
+  goodIntervalsMinutes: [10, 1440, 4320, 10080, 17280, 21600, 33120, 43200, 64800, 86400, 129600, 194400, 432000],
 
-  easyIntervalsValues: ['15m', '3d', '5d', '10d', '15d', '20d', '1M', '1.25M', '2M', '3M', '4.5M', '6M'],
-  easyIntervalsMinutes: [15, 4320, 7200, 14400, 21600, 28800, 43200, 54000, 86400, 129600, 194400, 259200]
+  easyIntervalsValues: ['15m', '3d', '5d', '10d', '15d', '20d', '1M', '1.25M', '2M', '3M', '4.5M', '6M', '1Y'],
+  easyIntervalsMinutes: [15, 4320, 7200, 14400, 21600, 28800, 43200, 54000, 86400, 129600, 194400, 259200, 518400]
 }
 
 
@@ -56,7 +56,7 @@ export function handleIntervals(dueCards, cardNumber) {
   if(interval === 129600){ // 3 Months
     updateIntervals('10m', '4.5M', '6M', '8M');
   }
-  if(interval === 194400 || interval === 259200){ // 4.5 Months
+  if(interval === 194400 || interval === 259200 || interval === 345600 || interval === 432000 || interval === 518400){ // 4.5 Months, 6 Months, 8 Months, 10 Months, and 1 year
     updateIntervals('10m', '8M', '10M', '1Y');
   }
 }
@@ -123,6 +123,9 @@ export function difficultIntervalsChecks(difficultInterval, dueCards, cardNumber
   } else if(difficultInterval.innerText === '3M') {
     updateLocalStorage(dueCards, cardNumber, cardsInReview, 129600);
 
+  } else if(difficultInterval.innerText === '8M') {
+    updateLocalStorage(dueCards, cardNumber, cardsInReview, 345600);
+
   }
 }
 
@@ -171,6 +174,9 @@ export function goodIntervalsChecks(goodInterval, dueCards, cardNumber, cardsInR
   } else if(goodInterval.innerText === '4.5M') {
     updateLocalStorage(dueCards, cardNumber, cardsInReview, 194400);
 
+  } else if(goodInterval.innerText === '10M') {
+    updateLocalStorage(dueCards, cardNumber, cardsInReview, 432000);
+
   }
 }
 
@@ -212,8 +218,8 @@ export function easyIntervalsChecks(easyIntervals, dueCards, cardNumber, cardsIn
   } else if(easyIntervals.innerText === '4.5M') {
     updateLocalStorage(dueCards, cardNumber, cardsInReview, 194400);
 
-  } else if(easyIntervals.innerText === '6M') {
-    updateLocalStorage(dueCards, cardNumber, cardsInReview, 259200);
+  } else if(easyIntervals.innerText === '1Y') {
+    updateLocalStorage(dueCards, cardNumber, cardsInReview, 518400);
 
   }
 }
@@ -222,6 +228,7 @@ export function easyIntervalsChecks(easyIntervals, dueCards, cardNumber, cardsIn
 function updateLocalStorage(dueCards, cardNumber, cardsInReview, intervalValue) {
   dueCards[cardNumber].interval = intervalValue;
   cardsInReview.push(dueCards[cardNumber]);
+  dueCards[cardNumber].addTime = new Date().getTime();
   dueCards.splice(dueCards.indexOf(dueCards[cardNumber]), 1);
   localStorage.setItem('cardsInReview', JSON.stringify(cardsInReview));
 }
