@@ -142,18 +142,21 @@ window.addEventListener('keydown', e => {
   } if(e.key === '2') {
     const difficultInterval = document.querySelector('.difficult-interval-time');
     difficultIntervalsChecks(difficultInterval, dueCards, cardNumber, cardsInReview);
+    updatePage();
     renderNextCard();
     handleIntervals(dueCards, cardNumber);
 
   } if(e.key === '3') {
     const goodInterval = document.querySelector('.good-interval-time');
     goodIntervalsChecks(goodInterval, dueCards, cardNumber, cardsInReview);
+    updatePage();
     renderNextCard();
     handleIntervals(dueCards, cardNumber);
 
   } if(e.key === '4') {
     const easyInterval = document.querySelector('.easy-interval-time');
     easyIntervalsChecks(easyInterval, dueCards, cardNumber, cardsInReview);
+    updatePage();
     renderNextCard();
     handleIntervals(dueCards, cardNumber);
   }

@@ -1,16 +1,3 @@
-const intervalsObject = {
-  difficultIntervalsValues: ['5m', '15m', '2d', '5d', '8d', '12d', '18d', '23d', '1M', '1.5M', '2M', '3M', '8M'],
-  difficultIntervalsMinutes: [5, 15, 2880, 7200, 11520, 17280, 25920, 33120, 43200, 64800, 86400, 129600, 345600],
-
-  goodIntervalsValues: ['10m', '1d', '3d', '7d', '12d', '15d', '23d', '1M', '1.5M', '2M', '3M', '4.5M', '10M'],
-  goodIntervalsMinutes: [10, 1440, 4320, 10080, 17280, 21600, 33120, 43200, 64800, 86400, 129600, 194400, 432000],
-
-  easyIntervalsValues: ['15m', '3d', '5d', '10d', '15d', '20d', '1M', '1.25M', '2M', '3M', '4.5M', '6M', '1Y'],
-  easyIntervalsMinutes: [15, 4320, 7200, 14400, 21600, 28800, 43200, 54000, 86400, 129600, 194400, 259200, 518400]
-}
-
-
-
 //Intervals
 export function handleIntervals(dueCards, cardNumber) {
   const interval = dueCards[cardNumber].interval;
